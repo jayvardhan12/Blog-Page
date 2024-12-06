@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.starryBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: twinkle 1.5s infinite alternate, moveStars 5s linear infinite;
+  z-index: -2;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveStars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.searchBox, .filterDropdown {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.searchBox:focus, .filterDropdown:focus {
+  border-color: #007acc;
+}
+
+.blogList {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  animation: fadeIn 1s ease-in-out;
+}
+
+.blogItem {
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blogItem:hover {
+  background: #444;
+  border-color: #007acc;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blogTitle {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.blogPreview {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.categoryTag {
+  font-size: 0.75rem;
+  background: #e0f4ff;
+  color: #007acc;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.noResults {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+.postDetails {
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.postTitle {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.postCategory {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.postContent {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.backButton {
+  background: #007acc;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.backButton:hover {
+  background: #005f9e;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
